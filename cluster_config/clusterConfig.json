@@ -1,0 +1,101 @@
+{
+	"__default__" : {
+		"name" : "pipeline_virus_conta",
+		"tags" : "snakemake, pipeline_virus_conta",
+		"volume_snakemake" : "snakemake",
+		"volume_home" : "home",
+		"volume_scratch3" : "scratch3",
+		"volume_annotations" : "annotations",
+		"cpu" : 1,
+		"mem" : 1,
+		"image" : "sequoia-docker-tools/snakemake:6.9.0"
+	},
+
+	"cram2bam" : {
+		"name" : "cram2bam",
+		"tags" : "snakemake, cram2bam",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/bwa-samtools:0.7.15-1"
+	},
+
+	"virusBreakend" : {
+		"name" : "virusBreakend",
+		"tags" : "snakemake, virusBreakend",
+		"cpu" : "4",
+		"mem" : "64",
+		"image" : "moabi-docker-tools-test/virusbreakend:dev"
+	},
+
+	"compressAndIndexVcf" : {
+		"name" : "compressIndexVcf",
+		"tags" : "snakemake, compressIndexVcf",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"filterSummary" : {
+		"name" : "filterSummary",
+		"tags" : "snakemake, filterSummary",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"filterVcf" : {
+		"name" : "filterVcf",
+		"tags" : "snakemake, filterVcf",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"fragmentCovBam" : {
+		"name" : "fragmentCovBam",
+		"tags" : "snakemake, fragmentCovBam",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"fragmentCovBed" : {
+		"name" : "fragmentCovBed",
+		"tags" : "snakemake, fragmentCovBed",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"getClosestGenes" : {
+		"name" : "getClosestGenes",
+		"tags" : "snakemake, getClosestGenes",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"insertionReport" : {
+		"name" : "insertionReport",
+		"tags" : "snakemake, insertionReport",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/seqoia-utils-cancer:2.0.0"
+	},
+
+	"processViralBam" : {
+		"name" : "processViralBam",
+		"tags" : "snakemake, processViralBam",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/samclip:0.4.0-3"
+	},
+	
+	"visualizeResults" : {
+		"name" : "visualizeResults",
+		"tags" : "snakemake, visualizeResults",
+		"cpu" : "2",
+		"mem" : "4",
+		"image" : "sequoia-docker-tools/virusbreakend-r:dev"
+	}
+}
